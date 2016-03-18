@@ -1,0 +1,24 @@
+{
+  "name": "socket-demo",
+  "version": "1.0.0",
+  "description": "Demo socket.io",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/duyetdev/nodejs-realtime-traininng.git"
+  },
+  "keywords": [
+    "nodejs",
+    "socket",
+    "demo"
+  ],
+  "author": "Van-Duyet Le",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/duyetdev/nodejs-realtime-traininng/issues"
+  },
+  "homepage": "https://github.com/duyetdev/nodejs-realtime-traininng#readme"
+}
