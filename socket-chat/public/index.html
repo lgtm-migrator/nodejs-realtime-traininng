@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Chat socket.io</title>
+	<style type="text/css">
+		form {
+			padding: 3px;
+			position: fixed;
+			bottom: 0;
+			width: 100%;
+		}
+
+		form input {
+			width: 85%;
+			border: 2px solid #000;
+			padding: 15px;
+		}
+
+		form button {
+			padding: 15px;
+			border: 2px solid #000;
+		}
+		form  #username {
+			width: 30%;
+			margin-bottom: 10px;
+		}
+	</style>
+</head>
+<body>
+	<ul id="messages"></ul>
+	<form>
+		Username: <input id="username" /> 
+		<input id="message" /> 
+		<button type="submit" class="btn btn-primary">Send</button>
+	</form>
+
+	<script type="text/javascript" src="bower_components/socket.io-client/socket.io.js"></script>
+	<script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+	<script type="text/javascript">
+		var socket = io();
+
+		$('form').submit(function(e) {
+			var user = $('#username').val();
+			var msg = $('#message').val();
+
+			if (!user) {
+				alert('username required!');
+				return false;
+			}
+
+			socket.emit('chat_message', { username: user, message: msg } );
+			$('#message').val('');
+			return false;
+		});
+
+		socket.on('chat_message', function (msg) {
+			$('#messages').append('<li><strong>'+ msg.username +'</strong>: '+ msg.message +'</li>')
+		})
+	</script>
+</body>
+</html>
