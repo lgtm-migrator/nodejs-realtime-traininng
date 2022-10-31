@@ -23,6 +23,6 @@
   "homepage": "https://github.com/duyetdev/nodejs-realtime-traininng#readme",
   "dependencies": {
     "express": "^4.13.4",
-    "socket.io": "^1.4.5"
+    "socket.io": "^3.0.0"
   }
 }
